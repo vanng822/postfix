@@ -1,7 +1,7 @@
 // Package postfix is for sending mail
 //
 // import (
-// 	"github.com/vanng822/gamlich/core/postfix"
+// 	"github.com/vanng822/postfix"
 // )
 //
 // fromAddr := postfix.NewAddress(from, fromEmail)

@@ -6,7 +6,7 @@ Sending mail through postfix SMTP server
 
 ```go
 import (
-	"github.com/vanng822/gamlich/core/postfix"
+	"github.com/vanng822/postfix"
 )
 fromAddr := postfix.NewAddress(from, fromEmail)
 toAddr := postfix.NewAddress(to, toEmail)
