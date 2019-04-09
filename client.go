@@ -8,11 +8,11 @@
 // toAddr := postfix.NewAddress(to, toEmail)
 // msg, err := postfix.MultipartMessage(fromAddr, toAddr, subject, text, html)
 // if err != nil {
-// 	return err
+// 	log.Fatal("Postfix mailing with error", err)
 // }
 // err := postfix.Send(msg)
 // if err != nil {
-// 	log.Println("Postfix mailing with error", err)
+// 	log.Fatal("Postfix mailing with error", err)
 // }
 package postfix
 
