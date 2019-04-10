@@ -12,7 +12,7 @@ func Send(msg *mail.Message) error {
 		return err
 	}
 
-	c, err := GetClient()
+	c, err := getClient()
 	if err != nil {
 		return err
 	}
