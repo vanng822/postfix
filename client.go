@@ -51,7 +51,7 @@ func getAddr() string {
 	return fmt.Sprintf("%s:%d", host, port)
 }
 
-func GetClient() (c *smtp.Client, err error) {
+func getClient() (c *smtp.Client, err error) {
 	c, err = clientFactory()
 	return
 }
