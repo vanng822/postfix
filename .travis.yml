@@ -1,0 +1,17 @@
+language: golang
+
+go:
+  - tip
+
+env:
+  global:
+  - GOPATH="$HOME/gopath"
+  - PATH="$HOME/gopath/bin:$HOME/bin:$PATH"
+
+install:
+  - go get github.com/vanng822/mail
+  - go get github.com/vanng822/go-premailer/premailer
+  - go get github.com/stretchr/testify/assert
+
+script:
+  - go test -v -cover
