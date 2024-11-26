@@ -3,7 +3,7 @@ module github.com/vanng822/postfix
 go 1.20
 
 require (
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 	github.com/vanng822/go-premailer v1.22.0
 	github.com/vanng822/mail v1.0.0
 )
