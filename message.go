@@ -37,7 +37,9 @@ func MultipartMessage(from *mail.Address, to *mail.Address, subject, text, html 
 
 	if len(attachments) > 0 {
 		mixed = mail.NewMultipart("multipart/mixed", msg)
-		alternative, _ = mixed.AddMultipart("multipart/alternative")
+		if alternative, err = mixed.AddMultipart("multipart/alternative"); err != nil {
+			return nil, err
+		}
 	} else {
 		alternative = mail.NewMultipart("multipart/alternative", msg)
 	}
