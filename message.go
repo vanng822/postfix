@@ -18,9 +18,17 @@ type Attachment struct {
 	Content     []byte
 }
 
+func NewAttachment(filename, contentType string, content []byte) *Attachment {
+	return &Attachment{
+		Filename:    filename,
+		ContentType: contentType,
+		Content:     content,
+	}
+}
+
 // MultipartMessage create a message with multipart text and html
 // html part is parsed and applied css inline styling
-func MultipartMessage(from *mail.Address, to *mail.Address, subject, text, html string, attachments ...Attachment) (*mail.Message, error) {
+func MultipartMessage(from *mail.Address, to *mail.Address, subject, text, html string, attachments ...*Attachment) (*mail.Message, error) {
 	var (
 		msg         *mail.Message
 		alternative *mail.Multipart
