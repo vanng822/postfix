@@ -1,19 +1,24 @@
 // Package postfix is for sending mail
 //
 // import (
-// 	"github.com/vanng822/postfix"
+//
+//	"github.com/vanng822/postfix"
+//
 // )
 //
 // fromAddr := postfix.NewAddress(from, fromEmail)
 // toAddr := postfix.NewAddress(to, toEmail)
 // msg, err := postfix.MultipartMessage(fromAddr, toAddr, subject, text, html)
-// if err != nil {
-// 	log.Fatal("Postfix mailing with error", err)
-// }
+//
+//	if err != nil {
+//		log.Fatal("Postfix mailing with error", err)
+//	}
+//
 // err := postfix.Send(msg)
-// if err != nil {
-// 	log.Fatal("Postfix mailing with error", err)
-// }
+//
+//	if err != nil {
+//		log.Fatal("Postfix mailing with error", err)
+//	}
 package postfix
 
 import (
@@ -54,4 +59,23 @@ func getAddr() string {
 func getClient() (c *smtp.Client, err error) {
 	c, err = clientFactory()
 	return
+}
+
+func Noop() error {
+	c, err := getClient()
+	if err != nil {
+		return err
+	}
+	defer c.Close()
+	return c.Noop()
+}
+
+func Hello() error {
+	localName := "localhost"
+	c, err := getClient()
+	if err != nil {
+		return err
+	}
+	defer c.Close()
+	return c.Hello(localName)
 }
