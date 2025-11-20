@@ -52,10 +52,6 @@ func MultipartMessage(from *mail.Address, to *mail.Address, subject, text, html 
 		alternative = mail.NewMultipart("multipart/alternative", msg)
 	}
 
-	if err = alternative.AddText("text/plain", bytes.NewReader([]byte(text))); err != nil {
-		return nil, err
-	}
-
 	prem, err = premailer.NewPremailerFromString(html, nil)
 	if err != nil {
 		return nil, err
@@ -64,6 +60,18 @@ func MultipartMessage(from *mail.Address, to *mail.Address, subject, text, html 
 	if err != nil {
 		return nil, err
 	}
+
+	// always have a text part, if empty use text generation from Premailer
+	if text == "" {
+		if text, err = prem.TransformText(); err != nil {
+			return nil, err
+		}
+	}
+
+	if err = alternative.AddText("text/plain", bytes.NewReader([]byte(text))); err != nil {
+		return nil, err
+	}
+
 	if err = alternative.AddText("text/html", bytes.NewReader([]byte(pcontent))); err != nil {
 		return nil, err
 	}
