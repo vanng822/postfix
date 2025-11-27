@@ -24,8 +24,8 @@ github.com/stretchr/testify v1.11.1 h1:7s2iGBzp5EwR7/aIZr8ao5+dra3wiQyKjjFuvgVKu
 github.com/stretchr/testify v1.11.1/go.mod h1:wZwfW3scLgRK+23gO65QZefKpKQRnfz6sD981Nm4B6U=
 github.com/vanng822/css v1.0.1 h1:10yiXc4e8NI8ldU6mSrWmSWMuyWgPr9DZ63RSlsgDw8=
 github.com/vanng822/css v1.0.1/go.mod h1:tcnB1voG49QhCrwq1W0w5hhGasvOg+VQp9i9H1rCM1w=
-github.com/vanng822/go-premailer v1.27.0 h1:WkoPtt0Y5VSj7q9irmKSpiuER4nSIrRULnIlpcAW6Ac=
-github.com/vanng822/go-premailer v1.27.0/go.mod h1:PtlQv/0wuq2pVw3f6JPjIjY6HiiEO6YEmR5JRhvupA4=
+github.com/vanng822/go-premailer v1.28.0 h1:hivxYhrtAZ3SH4VTYchkHval6pSl1d62ENAMlv5Z2GU=
+github.com/vanng822/go-premailer v1.28.0/go.mod h1:c4n2AyXkdwOXhXxkqG94VwHV7kMC41WDEZvs23w/M3A=
 github.com/vanng822/mail v1.0.0 h1:HcfC1h7q6Q/d7baE3w2Rtn9MnLcfFWRY6rr1Zp2985c=
 github.com/vanng822/mail v1.0.0/go.mod h1:MfJTrOJFhAILRa7DykBnbxpNSc6JxwK4pOr4Hbh/1Ho=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
