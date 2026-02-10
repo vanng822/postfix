@@ -10,15 +10,15 @@ import (
 )
 fromAddr := postfix.NewAddress(from, fromEmail)
 toAddr := postfix.NewAddress(to, toEmail)
-attachment := &Attachment{
+attachment := &postfix.Attachment{
 		Filename:    "test.txt",
 		ContentType: "text/plain",
 		Content:     []byte("test attachment content"),
 	}
 
-attachment2 := NewAttachment("test2.txt", "text/plain", []byte("test attachment content 2"))
+attachment2 := postfix.NewAttachment("test2.txt", "text/plain", []byte("test attachment content 2"))
 
-msg, err := MultipartMessage(from, to, subject, text, html, attachment, attachment2)
+msg, err := postfix.MultipartMessage(from, to, subject, text, html, attachment, attachment2)
 if err != nil {
 	log.Fatal("Postfix mailing with error", err)
 }
