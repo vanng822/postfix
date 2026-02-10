@@ -28,7 +28,7 @@ func TestMultipartMessageWithAttachment(t *testing.T) {
 	subject := "test subject"
 	text := "test text"
 	html := "<b>Click her</b>"
-	attachment := Attachment{
+	attachment := &Attachment{
 		Filename:    "test.txt",
 		ContentType: "text/plain",
 		Content:     []byte("test attachment content"),
@@ -36,7 +36,7 @@ func TestMultipartMessageWithAttachment(t *testing.T) {
 
 	attachment2 := NewAttachment("test2.txt", "text/plain", []byte("test attachment content 2"))
 
-	msg, err := MultipartMessage(from, to, subject, text, html, &attachment, attachment2)
+	msg, err := MultipartMessage(from, to, subject, text, html, attachment, attachment2)
 	assert.Nil(t, err)
 	assert.NotNil(t, msg)
 	assert.Equal(t, from, msg.From())
