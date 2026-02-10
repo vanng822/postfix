@@ -11,10 +11,10 @@ import (
 fromAddr := postfix.NewAddress(from, fromEmail)
 toAddr := postfix.NewAddress(to, toEmail)
 attachment := &postfix.Attachment{
-		Filename:    "test.txt",
-		ContentType: "text/plain",
-		Content:     []byte("test attachment content"),
-	}
+	Filename:    "test.txt",
+	ContentType: "text/plain",
+	Content:     []byte("test attachment content"),
+}
 
 attachment2 := postfix.NewAttachment("test2.txt", "text/plain", []byte("test attachment content 2"))
 
